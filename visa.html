@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .visa-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #004aad;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 32px;
+  margin: 10px 0 30px;
+  color: #1a1a1a;
+}
+
+.visa-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.visa-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.visa-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.visa-card:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  padding: 20px;
+  width: 100%;
+  transition: background 0.5s ease;
+}
+
+.visa-card:hover .overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.overlay h5 {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.overlay h3 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.arrow {
+  font-size: 20px;
+  background: #c00;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.visa-card:hover .arrow {
+  background: #ff0000;
+}
+.visa-card .arrow img {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  background: #c00;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+
+
+.visa-card:hover .arrow  img{
+  background: #ff0000;
+  transform: rotate(-50deg) scale(1.1); /* Rotates and scales */
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+
+    </style>
+</head>
+<body>
+    <section class="visa-section">
+  <h4 class="subtitle">Visa Services</h4>
+  <h2 class="title">Committed to provide you the best visa services</h2>
+  
+  <div class="visa-grid">
+    <div class="visa-card">
+        <img src="image/twopersons.png" alt="Student Visa" />
+        <div class="arrow"><img src="image/arrow.png" alt="" ></div>
+      <div class="overlay">
+        <h5>SERVICE 3</h5>
+        <h3>Student Visa</h3>
+      </div>
+    </div>
+
+    <div class="visa-card">
+      <img src="image/twopersons.png" alt="Tourist Visa" />
+      <div class="arrow"><img src="image/arrow.png" alt=""></div>
+      <div class="overlay">
+        <h5>SERVICE 4</h5>
+        <h3>Tourist Visa</h3>
+      </div>
+    </div>
+
+    <div class="visa-card">
+      <img src="image/twopersons.png" alt="Family Visa" />
+      <div class="arrow"><img src="image/arrow.png" alt=""></div>
+      <div class="overlay">
+        <h5>SERVICE 5</h5>
+        <h3>Family Visa</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

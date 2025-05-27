@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Dropdown menu styles */
+    nav ul li {
+      position: relative;
+    }
+    nav ul li ul.dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      list-style: none;
+      padding: 10px 0;
+      min-width: 160px;
+      border-radius: 4px;
+      z-index: 1001;
+    }
+    nav ul li:hover ul.dropdown {
+      display: block;
+    }
+    nav ul li ul.dropdown li {
+      padding: 8px 20px;
+    }
+    nav ul li ul.dropdown li a {
+      color: #3b5998;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav ul li ul.dropdown li a:hover {
+      background-color: #3b5998;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Get Started button styles */
+    .get-started-btn {
+      position: absolute;
+      top: 50%; /* vertically center on map */
+      right: 40px;
+      transform: translateY(-50%);
+      background: white;
+      color: #3b5998;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 14px 30px;
+      border: 2px solid #3b5998;
+      border-radius: 30px / 50%; /* cylinder shape */
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(59, 89, 152, 0.3);
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 500;
+      user-select: none;
+    }
+    .get-started-btn:hover {
+      background-color: #3b5998;
+      color: white;
+    }
+
+    /* Wrapper for relative positioning on main for button */
+    main {
+      position: relative;
+      padding-top: 140px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 40px;
+      text-align: center;
+      background-color: #f2f2f2;
+      min-height: calc(100vh - 200px);
+      margin: 0;
+    }
+     .nav {
+      display: flex;
+      justify-content: center;
+      background-color: white;
+      border-top: 5px solid #b30000; /* Red top border */
+    }
+
+    .nav a {
+      flex: 1;
+      text-align: center;
+      padding: 15px 0;
+      text-decoration: none;
+      color: #001f4d;
+      font-weight: 500;
+      background-color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav a.active {
+      background-color: navy;
+      color: white;
+    }
+
+    .nav a:hover:not(.active) {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-cursor"></div>
+
+  <header>
+    <img src="logosbub.png" alt="Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li>
+          <a href="#">StudyAbroad</a>
+          
+          <ul class="dropdown">
+            <li><img src="image/flags/uk.png" alt=""><a href="#"> UK</a></li>
+            <li><img src="image/flags/europe.png" alt=""><a href="#"> Europe</a></li>
+            <li><img src="image/flags/usa.png" alt=""><a href="#"> USA</a></li>
+            <li><img src="image/flags/canada.png" alt=""><a href="#"> Canada</a></li>
+            <li><img src="image/flags/australia.png" alt=""><a href="#"> Australia</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact Us</a></li>
+        <span class="blue-circle">
+            <img src="image/transparency.png" alt="Icon" />
+          </span>
+      </ul>
+    </nav>
+  </header>
+
+  
+<div class="slideshow-container">
+ <div class="slide active" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small>WELCOME TO SBUB GROUP</small>
+    <h1>Immigration <br>& Visa<br> Solutions the<br> easy way</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/planesuitperson.jpeg.png" alt="Graduates" class="slide-image">
+</div>
+
+<div class="slide active" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small>WELCOME TO SBUB GROUP</small><br>
+    <h1>Immigration <br>& Visa<br> Solutions the<br> easy way</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/twopersons.png" alt="Graduates" class="slide-image">
+</div>
+
+<div class="slide active" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small style="margin-bottom:20px;">WELCOME TO SBUB GROUP</small><br>
+    <h1>Immigration <br>& Visa<br> Solutions the<br> easy way</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/twoperson.png" alt="Graduates" class="slide-image">
+</div>
+
+<div class="slide active" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small>WELCOME TO SBUB GROUP</small><br>
+    <h1>We Ensure<br>Great<br>Lifestyle for<br>Your Family</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/planesuitperson.jpeg.png" alt="Graduates" class="slide-image">
+</div>
+
+ 
+ 
+  <!-- Additional slides can be added below -->
+</div>
+
+<div class="nav">
+  <a href="#">Visa Solutions</a>
+  <a href="#">Immigration</a>
+  <a href="#">Education</a>
+  <a href="#">Consultancy</a>
+</div>
+
+<section>
+
+<div class="container">
+  <div class="left-section">
+    <img src="image/manvisa.png" alt="Student">
+    <div class="consultation-btn">📞 Call For Consultation<br>+01 567 114 3312</div>
+    <div class="client-card">
+      <div class="icon-circle">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/airport.png" alt="plane">
+      </div>
+      <h4>Served Client</h4>
+      <div class="progress-circle">
+        <div>
+          <small>Successful</small>
+          <span>127865</span>
+        </div>
+      </div>
+      <div class="flags">
+        <img src="https://flagcdn.com/us.svg" alt="US">
+        <img src="https://flagcdn.com/nz.svg" alt="NZ">
+        <img src="https://flagcdn.com/de.svg" alt="DE">
+        <img src="https://img.icons8.com/ios-glyphs/30/000000/plus-math.png" alt="Plus" style="background: #f0f0f0; border-radius: 50%; padding: 2px;">
+        <span>10 Countries</span>
+      </div>
+      <p style="font-size: 13px; margin-top: 8px; color: #777;">We are serving for 20 Years</p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <h5>ABOUT SBUS GROUP</h5>
+    <h2>Together we can build you a bright future</h2>
+    <p>We are one of the fastest-growing education & training consultancies.</p>
+    <p>We are here to help and support students who would like to achieve their dreams through studying abroad in the world’s best universities.</p>
+    <p>We are here to help you fulfill your dreams!</p>
+
+    <div class="features">
+      <div class="feature-item"><img src="image/school.png">Best Possible Higher Education Courses For Students</div>
+      <div class="feature-item"><img src="image/presentation.png" alt="">Professional Training For The Employees And Employers</div>
+    </div>
+
+    <ul style="margin-left: 15px; color: #555;">
+      <li>Providing a wide range of courses from degrees, bachelors, masters and so much more.</li>
+      <li>With partnerships with over 1200 schools, colleges and universities in the UK, USA, Canada, Mauritius, Turkey and Europe, all the way to New Zealand and Australia.</li>
+    </ul>
+
+    <button class="read-more-btn">Read More</button>
+  </div>
+</div>
+</section>
+<br>
+<br><br><br><br><br><br><br>
+ <section class="visa-section">
+  <h4 class="subtitle">Visa Services</h4>
+  <h2 class="title">Committed to provide you the best visa services</h2>
+  
+  <div class="visa-grid">
+    <div class="visa-card">
+        <img src="image/twopersons.png" alt="Student Visa" />
+        <div class="arrow"><img src="image/arrow.png" alt="" ></div>
+      <div class="overlay">
+        <h5>SERVICE 3</h5>
+        <h3>Student Visa</h3>
+      </div>
+    </div>
+
+    <div class="visa-card">
+      <img src="image/tourvisa.png" alt="Tourist Visa" />
+      <div class="arrow"><img src="image/arrow.png" alt=""></div>
+      <div class="overlay">
+        <h5>SERVICE 4</h5>
+        <h3>Tourist Visa</h3>
+      </div>
+    </div>
+
+    <div class="visa-card">
+      <img src="image/familyvisa.png" alt="Family Visa" />
+      <div class="arrow"><img src="image/arrow.png" alt=""></div>
+      <div class="overlay">
+        <h5>SERVICE 5</h5>
+        <h3>Family Visa</h3>
+      </div>
+    </div>
+  </div>
+  <div class="dots"><img src="image/dots.png" alt=""></div>
+</section>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 5000);
+</script>
+<section class="sectionthree">
+
+   <div class="sidebar" id="active-country">UK</div>
+  <div class="content-wrapper">
+    <div class="main-content" id="country-info">
+      <!-- Country content here -->
+    </div>
+    <div class="tabs">
+      <div onclick="showCountry('UK')" class="active">UK</div>
+      <div onclick="showCountry('Europe')">Europe</div>
+      <div onclick="showCountry('USA')">USA</div>
+      <div onclick="showCountry('Canada')">Canada</div>
+      <div onclick="showCountry('Australia')">Australia</div>
+    </div>
+  </div>
+
+  <script>
+    const content = {
+      UK: {
+        title: "Visa & Immigration Services To UK",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg",
+        services1: ["Visitor Visa", "Student Visa & Admission", "Work Visa – H1B"],
+        services2: ["Business Visa", "Student Visa for Canada", "Work permit for Canada"],
+      },
+      Europe: {
+        title: "Visa & Immigration Services To Europe",
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg",
+        services1: ["Schengen Visa", "Work Visa", "Family Visa"],
+        services2: ["Student Visa", "Business Visa", "Tourist Visa"],
+      },
+      USA: {
+        title: "Visa & Immigration Services To USA",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+        services1: ["B1/B2 Visa", "F1 Visa", "H1B Work Visa"],
+        services2: ["L1 Visa", "Business Visa", "Green Card Assistance"],
+      },
+      Canada: {
+        title: "Visa & Immigration Services To Canada",
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
+        services1: ["Express Entry", "Student Visa", "Work Permit"],
+        services2: ["Visitor Visa", "PNP", "Family Sponsorship"],
+      },
+      Australia: {
+        title: "Visa & Immigration Services To Australia",
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg",
+        services1: ["Skilled Visa", "Student Visa", "Tourist Visa"],
+        services2: ["Family Visa", "Business Visa", "Permanent Residency"],
+      }
+    };
+
+    function showCountry(country) {
+      document.getElementById('active-country').innerText = country;
+      document.querySelectorAll('.tabs div').forEach(tab => tab.classList.remove('active'));
+      document.querySelector(`.tabs div[onclick*="${country}"]`).classList.add('active');
+
+      const data = content[country];
+      document.getElementById('country-info').innerHTML = `
+        <h2>${data.title}</h2>
+        <p style="color: #0056b3">The Express Entry program is designed for skilled workers...</p>
+        <div class="services">
+          <ul>${data.services1.map(s => `<li>${s}</li>`).join('')}</ul>
+          <ul>${data.services2.map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+        <img class="flag" src="${data.image}" alt="${country} Flag" />
+        <button>CONTACT US</button>
+      `;
+    }
+    showCountry('UK');
+  </script>
+
+</section>
+  <footer>
+    <p>&copy; 2025 My Website | All rights reserved</p>
+  </footer>
+
+  <script>
+    // Custom cursor JS
+    const cursor = document.querySelector('.custom-cursor');
+    window.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+   document.addEventListener('contextmenu', function(e) {
+       e.preventDefault();
+    });
+});
+  </script>
+</body>
+</html>

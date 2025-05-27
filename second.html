@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immigration & Visa Solutions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: white;
+      max-width: 600px;
+    }
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .content p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    .content button {
+      padding: 10px 20px;
+      background: white;
+      color: red;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      background: white;
+      padding: 15px 0;
+    }
+    .nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .nav a.active {
+      color: blue;
+      border-bottom: 2px solid blue;
+    }
+    .slide-image {
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      max-height: 90%;
+      height: 90%;
+      width: auto;
+      object-fit: contain;
+      z-index: 1;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      bottom:0;
+      width: 70%;
+      right: 0;
+      max-height: 95%;
+      z-index: 1;
+      animation: waveFlag 4s ease-in-out infinite;
+      transform-origin: left center;
+    }
+    @keyframes waveFlag {
+  0% {
+    transform: perspective(800px) rotateY(0deg) skewY(0deg);
+  }
+  25% {
+    transform: perspective(800px) rotateY(2deg) skewY(1deg);
+  }
+  50% {
+    transform: perspective(800px) rotateY(0deg) skewY(0deg);
+  }
+  75% {
+    transform: perspective(800px) rotateY(-2deg) skewY(-1deg);
+  }
+  100% {
+    transform: perspective(800px) rotateY(0deg) skewY(0deg);
+  }
+}
+  .slide-image {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    max-height: 90%;
+    z-index: 2;
+  }
+
+
+  </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+ <div class="slide active" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small>WELCOME TO SBUB GROUP</small>
+    <h1>Immigration & Visa Solutions the easy way</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/planesuitperson.jpeg.jpg" alt="Graduates" class="slide-image">
+</div>
+
+<div class="slide" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small>WELCOME</small>
+    <h1>Immigration & Visa Solutions the easy way</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/planesuitperson.jpeg.jpg" alt="Graduates" class="slide-image">
+</div>
+
+<div class="slide" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small>SBUB GROUP</small>
+    <h1>Immigration & Visa Solutions the easy way</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/planesuitperson.jpeg.jpg" alt="Graduates" class="slide-image">
+</div>
+
+<div class="slide" style="background-image: url('image/worldmap.png');">
+  <div class="content">
+    <small>WELCOME GROUP</small>
+    <h1>Immigration & Visa Solutions the easy way</h1>
+    <p>We provide a complete immigration & visa services for USA, Canada & Australia for travel & education.</p>
+    <button>GET STARTED</button>
+  </div>
+  <img src="image/flags/motionflag.png" alt="Overlay Background" class="slide-overlay">
+  <img src="image/planesuitperson.jpeg.jpg" alt="Graduates" class="slide-image">
+</div>
+
+ 
+ 
+  <!-- Additional slides can be added below -->
+</div>
+
+<div class="nav">
+  <a href="#">Visa Solutions</a>
+  <a href="#">Immigration</a>
+  <a href="#">Education</a>
+  <a href="#">Consultancy</a>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 5000);
+</script>
+
+</body>
+</html>

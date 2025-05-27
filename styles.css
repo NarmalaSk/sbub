@@ -1,0 +1,979 @@
+/* Import Google Font Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  
+  font-family: 'Roboto', Arial, sans-serif;
+  min-height: 100%;
+  font-weight: 700;
+  overflow-x: hidden; /* prevent horizontal scroll if any */
+}
+
+header {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-left: 100px;  /* Move nav right */
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  position: relative; /* needed for dropdown */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #3b5998;
+  font-size: 20px;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 3px;
+  font-weight: 700;
+}
+
+nav ul li a:hover {
+  color: #d62828;
+  border-bottom: 2px solid #d62828;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Blue Circle beside StudyAbroad — Bigger and more spaced */
+.blue-circle {
+  display: inline-block;
+  position: relative;
+  width: 39px;
+  height: 39px;
+  background-color: #3b5998;
+  border-radius: 50%;
+  margin-left: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon inside Blue Circle */
+.blue-circle img {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+/* Dropdown styles */
+nav ul li.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown li img{
+  border-radius: 40%;
+  width: 40%;
+  height:40%;
+  display: flex;
+  margin-right: 20px;
+  
+}
+.dropdown li{
+  display: flex;
+}
+.dropdown li{
+  display: flex;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%; /* below the parent <li> */
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 1500;
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #3b5998;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #d62828;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Adjust blue circle margin for dropdown */
+nav ul li.dropdown > a .blue-circle {
+  margin-left: 12px; /* smaller margin for cleaner look */
+  vertical-align: middle;
+}
+
+/* Logo Styling — now on left */
+.logo {
+  position: absolute;
+  left: 250px;
+  top: -45px;
+  width: 150px;
+  height: 130px;
+  transform: translateY(50%);
+  z-index: 999;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #d62828;
+  
+}
+
+/* Main Content */
+main {
+  padding-top: 140px; /* push content below fixed header */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: #f2f2f2;
+  min-height: calc(100vh - 200px);
+  margin: 0;
+}
+
+/* World Map Image Styling */
+.world-map {
+  width: 100vw;           /* full viewport width */
+  max-width: 100%;
+  height: 1000px;         /* adjust height as needed */
+  display: block;
+  margin: 0;
+  object-fit: cover;
+  padding: 0;
+  margin-top: 0;
+  position: relative;
+}
+
+/* Get Started Button container - FIXED */
+.get-started-container {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  margin-top: -70px; /* Pull up the container so button overlays map */
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  pointer-events: auto; /* allow interaction */
+  z-index: 1001; /* above map but below header */
+  left: 33px;
+  height: auto; /* wrap the button */
+}
+
+/* Get Started Button Styles */
+.get-started-btn {
+  background-color: white;
+  border: none;
+  color: #3b5998;
+  font-weight: 700;
+  font-size: 24px;       /* bigger font */
+  padding: 18px 50px;    /* bigger padding */
+  border-radius: 40px;   /* pill shape */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(59, 89, 152, 0.4);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  pointer-events: auto; /* ensure clickable */
+  position: relative;
+  left:-83px;
+}
+
+.get-started-btn:hover {
+  background-color: #3b5998;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #3b5998;
+  color: #ffffff;
+  padding: 25px;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Custom Light Red Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  color: #b71c1c;
+  background-color: rgba(214, 40, 40, 0.8); /* light red with transparency */
+  border: 2px solid rgba(214, 40, 40, 0.8);
+  border-radius: 50%;
+  pointer-events: none; /* so it won't block clicks */
+  /* transform: translate(-50%, -50%); */
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 2000;
+  /* mix-blend-mode: difference; optional cool effect */
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+  color: red;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: white;
+      max-width: 600px;
+    }
+    .content h1 {
+      margin-top: 10px;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .content p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    .content button {
+      padding: 10px 20px;
+      background: white;
+      color: red;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+
+    }
+    .content button:hover{
+      background-color: rgb(38, 0, 255);
+      color: white  ;
+      transition: 0.7s ease-in-out;
+    }
+    .content small{
+      border: 1px solid white;
+      padding: 10px 20px;
+      border-radius: 15px;
+      bottom: 40px;
+      margin-bottom: 30px;
+  
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      background: white;
+      padding: 15px 0;
+    }
+    .nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .nav a.active {
+      color: blue;
+      border-bottom: 2px solid blue;
+    }
+    .slide-image {
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      max-height: 90%;
+      height: 90%;
+      width: auto;
+      object-fit: contain;
+      z-index: 1;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      bottom:0;
+      width: 40%;
+      right: 0;
+      max-height: 95%;
+      z-index: 1;
+      border-radius: 50px;
+      image-rendering: crisp-edges;
+      animation: waveFlag 4s ease-in-out infinite;
+      transform-origin: left center;
+    }
+    @keyframes waveFlag {
+  0% {
+    transform: perspective(800px) rotateY(0deg) skewY(0deg);
+  }
+  25% {
+    transform: perspective(800px) rotateY(2deg) skewY(1deg);
+  }
+  50% {
+    transform: perspective(800px) rotateY(0deg) skewY(0deg);
+  }
+  75% {
+    transform: perspective(800px) rotateY(-2deg) skewY(-1deg);
+  }
+  100% {
+    transform: perspective(800px) rotateY(0deg) skewY(0deg);
+  }
+}
+  .slide-image {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    max-height: 90%;
+    z-index: 2;
+  }
+
+
+   * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .left-section {
+      flex: 1;
+      top: 0;
+      min-width: 300px;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .left-section img {
+      width: 70%;
+      border-radius: 10px;
+    }
+
+    .consultation-btn {
+      position: absolute;
+      bottom: 40%;
+      right:0 ;
+      background: #b71c1c;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .consultation-btn:hover{
+        background :blue;
+        transition: 0.s ease-in-out;
+    }
+
+    .right-section {
+      flex: 1.2;
+      padding: 20px 40px;
+      min-width: 300px;
+    }
+
+    .right-section h5 {
+      color: #d32f2f;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .right-section h2 {
+      font-size: 32px;
+      margin: 10px 0 20px;
+      color: #1a237e;
+    }
+
+    .right-section p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: flex;
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      color: #1a237e;
+    }
+
+    .feature-item::before {
+      content: "✔";
+      color: green;
+    }
+
+    .read-more-btn {
+      background: #d32f2f;
+      margin-top: 40px;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .client-card {
+      position: absolute;
+      bottom: -90%;
+      left: 0px;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 230px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .client-card h4 {
+      margin-bottom: 10px;
+      color: #1a237e;
+      font-size: 16px;
+      gap: 10px;
+    }
+
+    .progress-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(#002984 270deg, #e0e0e0 0deg);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-circle div {
+      text-align: center;
+    }
+
+    .progress-circle span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #002984;
+    }
+
+    .progress-circle small {
+      display: block;
+      color: #002984;
+      font-size: 13px;
+    }
+
+    .flags {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .flags img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .flags span {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .icon-circle {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #3f51b5;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-circle img {
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .client-card {
+        position: static;
+        margin-top: 30px;
+      }
+
+      .right-section {
+        padding: 20px;
+      }
+    }
+
+
+    .feature-item img{
+      width: 30px;
+      height: 30px;
+    }
+
+  .visa-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #004aad;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 32px;
+  margin: 10px 0 30px;
+  color: #1a1a1a;
+}
+
+.visa-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.visa-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.visa-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.visa-card:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  padding: 20px;
+  width: 100%;
+  transition: background 0.5s ease;
+}
+
+.visa-card:hover .overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.overlay h5 {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.overlay h3 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.arrow {
+  font-size: 20px;
+  background: #c00;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.visa-card:hover .arrow {
+  background: #ff0000;
+}
+.visa-card .arrow img {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  background: #c00;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+
+
+.visa-card:hover .arrow  img{
+  background: #ff0000;
+  transform: rotate(-50deg) scale(1.1); /* Rotates and scales */
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+.dots{
+  top: 0;
+  bottom: 0;
+}
+.dots img{
+  width: 50px;
+}
+
+
+
+.sectionthree {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f9;
+      display: flex;
+      height: 100vh;
+    }
+
+    .sectionthree .sidebar {
+      width: 60px;
+      background: #941a1d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      padding: 20px 0;
+      cursor: pointer;
+      transition: width 0.3s;
+    }
+
+    .sectionthree .tabs {
+      display: flex;
+      flex-direction: column;
+      width: 50px;
+      border: 1px solid rgb(0, 0, 0);
+      background: #ffffff;
+      border-left: 2px solid #e2e2e2;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+
+    .sectionthree .tabs div {
+      transform: rotate(-90deg);
+      font-size: 14px;
+      cursor: pointer;
+      padding: 20px 0;
+      transition: color 0.3s;
+    }
+
+    .sectionthree .tabs div:hover,
+    .sectionthree .tabs .active {
+      color: #941a1d;
+      font-weight: bold;
+    }
+
+    .sectionthree .main-content {
+      flex: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 1px solid black;
+    }
+
+    .sectionthree .flag {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid #15315a;
+      margin: 20px 0;
+    }
+
+    .sectionthree .services {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sectionthree .services li::before {
+      content: '\2713';
+      color: #15315a;
+      margin-right: 10px;
+    }
+
+    .sectionthree button {
+      background: #505050;
+      color: #fff;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      margin-top: 30px;
+      cursor: pointer;
+      width: 150px;
+      bottom: 0;
+    }
+     .sectionthree button:hover{
+      background: #c00;
+      transition: 0.7s ease-in-out;
+     }
+    .sectionthree .content-wrapper {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    /* Small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  header {
+    padding: 20px 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 0;
+  }
+
+  .logo {
+    left: 20px;
+    top: -30px;
+    width: 120px;
+    height: 100px;
+  }
+
+  .get-started-container {
+    justify-content: center;
+    left: 0;
+    padding-right: 0;
+    margin-top: -50px;
+  }
+
+  .get-started-btn {
+    font-size: 18px;
+    padding: 12px 30px;
+    left: 0;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .content {
+    left: 5%;
+    max-width: 90%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+}
+
+/* Tablets (768px–1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  nav ul {
+    gap: 25px;
+    padding-left: 50px;
+  }
+
+  .logo {
+    left: 100px;
+  }
+
+  .get-started-btn {
+    font-size: 20px;
+    padding: 14px 40px;
+  }
+}

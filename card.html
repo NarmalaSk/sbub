@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Education Consultancy Hero Section</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .left-section {
+      flex: 1;
+      top: 0;
+      min-width: 300px;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .left-section img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .consultation-btn {
+      position: absolute;
+      bottom: 40%;
+      right:0 ;
+      background: #b71c1c;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .consultation-btn:hover{
+        background :blue;
+        transition: 0.s ease-in-out;
+    }
+
+    .right-section {
+      flex: 1.2;
+      padding: 20px 40px;
+      min-width: 300px;
+    }
+
+    .right-section h5 {
+      color: #d32f2f;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .right-section h2 {
+      font-size: 32px;
+      margin: 10px 0 20px;
+      color: #1a237e;
+    }
+
+    .right-section p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: flex;
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      color: #1a237e;
+    }
+
+    .feature-item::before {
+      content: "✔";
+      color: green;
+    }
+
+    .read-more-btn {
+      background: #d32f2f;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .client-card {
+      position: absolute;
+      bottom: -90%;
+      left: 0px;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 230px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .client-card h4 {
+      margin-bottom: 10px;
+      color: #1a237e;
+      font-size: 16px;
+      gap: 10px;
+    }
+
+    .progress-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(#002984 270deg, #e0e0e0 0deg);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-circle div {
+      text-align: center;
+    }
+
+    .progress-circle span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #002984;
+    }
+
+    .progress-circle small {
+      display: block;
+      color: #002984;
+      font-size: 13px;
+    }
+
+    .flags {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .flags img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .flags span {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .icon-circle {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #3f51b5;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-circle img {
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .client-card {
+        position: static;
+        margin-top: 30px;
+      }
+
+      .right-section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left-section">
+    <img src="image/manvisa.png" alt="Student">
+    <div class="consultation-btn">📞 Call For Consultation<br>+01 567 114 3312</div>
+    <div class="client-card">
+      <div class="icon-circle">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/airport.png" alt="plane">
+      </div>
+      <h4>Served Client</h4>
+      <div class="progress-circle">
+        <div>
+          <small>Successful</small>
+          <span>127865</span>
+        </div>
+      </div>
+      <div class="flags">
+        <img src="https://flagcdn.com/us.svg" alt="US">
+        <img src="https://flagcdn.com/nz.svg" alt="NZ">
+        <img src="https://flagcdn.com/de.svg" alt="DE">
+        <img src="https://img.icons8.com/ios-glyphs/30/000000/plus-math.png" alt="Plus" style="background: #f0f0f0; border-radius: 50%; padding: 2px;">
+        <span>10 Countries</span>
+      </div>
+      <p style="font-size: 13px; margin-top: 8px; color: #777;">We are serving for 20 Years</p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <h5>ABOUT SBUS GROUP</h5>
+    <h2>Together we can build you a bright future</h2>
+    <p>We are one of the fastest-growing education & training consultancies.</p>
+    <p>We are here to help and support students who would like to achieve their dreams through studying abroad in the world’s best universities.</p>
+    <p>We are here to help you fulfill your dreams!</p>
+
+    <div class="features">
+      <div class="feature-item"><img src="image/school.png">Best Possible Higher Education Courses For Students</div>
+      <div class="feature-item"><img src="image/presentation.png" alt="">Professional Training For The Employees And Employers</div>
+    </div>
+
+    <ul style="margin-left: 15px; color: #555;">
+      <li>Providing a wide range of courses from degrees, bachelors, masters and so much more.</li>
+      <li>With partnerships with over 1200 schools, colleges and universities in the UK, USA, Canada, Mauritius, Turkey and Europe, all the way to New Zealand and Australia.</li>
+    </ul>
+
+    <button class="read-more-btn">Read More</button>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visa & Immigration Services</title>
+  <style>
+    .sectionthree {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f9;
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 60px;
+      background: #941a1d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      padding: 20px 0;
+      cursor: pointer;
+      transition: width 0.3s;
+    }
+
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      width: 50px;
+      background: #ffffff;
+      border-left: 1px solid #e2e2e2;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+
+    .tabs div {
+      transform: rotate(-90deg);
+      font-size: 14px;
+      cursor: pointer;
+      padding: 20px 0;
+      transition: color 0.3s;
+    }
+
+    .tabs div:hover,
+    .tabs .active {
+      color: #941a1d;
+      font-weight: bold;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .flag {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid #15315a;
+      margin: 20px 0;
+    }
+
+    .services {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .services li::before {
+      content: '\2713';
+      color: #15315a;
+      margin-right: 10px;
+    }
+
+    button {
+      background: #3d3d3d;
+      color: #fff;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar" id="active-country">UK</div>
+  <div class="content-wrapper">
+    <div class="main-content" id="country-info">
+      <!-- Country content here -->
+    </div>
+    <div class="tabs">
+      <div onclick="showCountry('UK')" class="active">UK</div>
+      <div onclick="showCountry('Europe')">Europe</div>
+      <div onclick="showCountry('USA')">USA</div>
+      <div onclick="showCountry('Canada')">Canada</div>
+      <div onclick="showCountry('Australia')">Australia</div>
+    </div>
+  </div>
+
+  <script>
+    const content = {
+      UK: {
+        title: "Visa & Immigration Services To UK",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg",
+        services1: ["Visitor Visa", "Student Visa & Admission", "Work Visa – H1B"],
+        services2: ["Business Visa", "Student Visa for Canada", "Work permit for Canada"],
+      },
+      Europe: {
+        title: "Visa & Immigration Services To Europe",
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg",
+        services1: ["Schengen Visa", "Work Visa", "Family Visa"],
+        services2: ["Student Visa", "Business Visa", "Tourist Visa"],
+      },
+      USA: {
+        title: "Visa & Immigration Services To USA",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+        services1: ["B1/B2 Visa", "F1 Visa", "H1B Work Visa"],
+        services2: ["L1 Visa", "Business Visa", "Green Card Assistance"],
+      },
+      Canada: {
+        title: "Visa & Immigration Services To Canada",
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
+        services1: ["Express Entry", "Student Visa", "Work Permit"],
+        services2: ["Visitor Visa", "PNP", "Family Sponsorship"],
+      },
+      Australia: {
+        title: "Visa & Immigration Services To Australia",
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg",
+        services1: ["Skilled Visa", "Student Visa", "Tourist Visa"],
+        services2: ["Family Visa", "Business Visa", "Permanent Residency"],
+      }
+    };
+
+    function showCountry(country) {
+      document.getElementById('active-country').innerText = country;
+      document.querySelectorAll('.tabs div').forEach(tab => tab.classList.remove('active'));
+      document.querySelector(`.tabs div[onclick*="${country}"]`).classList.add('active');
+
+      const data = content[country];
+      document.getElementById('country-info').innerHTML = `
+        <h2>${data.title}</h2>
+        <p style="color: #0056b3">The Express Entry program is designed for skilled workers...</p>
+        <div class="services">
+          <ul>${data.services1.map(s => `<li>${s}</li>`).join('')}</ul>
+          <ul>${data.services2.map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+        <img class="flag" src="${data.image}" alt="${country} Flag" />
+        <button>CONTACT US</button>
+      `;
+    }
+    showCountry('UK');
+  </script>
+</body>
+</html>
